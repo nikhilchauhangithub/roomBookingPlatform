@@ -8,6 +8,7 @@ import { SafeUser } from '@/app/types';
 // import Mapstatic from '../Mapstatic';
 import Avatar from '../Avatar';
 import ListingCategory from './ListingCategory';
+import Mapstatic from '../Mapstatic';
 
 // const Map = dynamic(() => import('../Map'), {
 //   ssr: false,
@@ -94,7 +95,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
       </div>
       <hr />
       {/* <Map center={coordinates} /> */}
-      {/* <Mapstatic iframeurl={iframeurl} /> */}
+      <Mapstatic />
     </div>
   );
 };
