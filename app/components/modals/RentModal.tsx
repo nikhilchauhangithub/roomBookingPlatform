@@ -44,10 +44,11 @@ const RentModal = () => {
   } = useForm<FieldValues>({
     defaultValues: {
       category: '',
-      location: null,
+      locationValue: null,
       guestCount: 1,
       roomCount: 1,
       bathroomCount: 1,
+      iframeurl: null,
       imageSrc: '',
       price: 1,
       title: '',
@@ -62,13 +63,13 @@ const RentModal = () => {
   const bathroomCount = watch('bathroomCount');
   const imageSrc = watch('imageSrc');
 
-  const Map = useMemo(
-    () =>
-      dynamic(() => import('../Map'), {
-        ssr: false,
-      }),
-    [location]
-  );
+  // const Map = useMemo(
+  //   () =>
+  //     dynamic(() => import('../Map'), {
+  //       ssr: false,
+  //     }),
+  //   [location]
+  // );
 
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
@@ -163,11 +164,31 @@ const RentModal = () => {
           title="Where is your place located?"
           subtitle="Help guests find you!"
         />
-        <CountrySelect
-          value={location}
-          onChange={(value) => setCustomValue('location', value)}
+        <Input
+          id="locationValue"
+          label="Address"
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
         />
-        <Map center={location?.latlng} />
+        {/* <Input
+          id="iframeurl"
+          label="Map iframe url"
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        /> */}
+
+        {/* <Input
+          id="description"
+          label="Description"
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        /> */}
       </div>
     );
   }

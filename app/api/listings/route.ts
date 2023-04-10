@@ -19,7 +19,8 @@ export async function POST(request: Request) {
     roomCount,
     bathroomCount,
     guestCount,
-    location,
+    locationValue,
+    // iframeurl,
     price,
   } = body;
 
@@ -38,7 +39,8 @@ export async function POST(request: Request) {
       roomCount,
       bathroomCount,
       guestCount,
-      locationValue: location.value,
+      locationValue,
+      // iframeurl,
       price: parseInt(price, 10),
       userId: currentUser.id,
     },

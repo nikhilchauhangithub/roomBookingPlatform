@@ -5,13 +5,13 @@ import { IconType } from 'react-icons';
 
 import useCountries from '@/app/hooks/useCountries';
 import { SafeUser } from '@/app/types';
-
+// import Mapstatic from '../Mapstatic';
 import Avatar from '../Avatar';
 import ListingCategory from './ListingCategory';
 
-const Map = dynamic(() => import('../Map'), {
-  ssr: false,
-});
+// const Map = dynamic(() => import('../Map'), {
+//   ssr: false,
+// });
 
 interface ListingInfoProps {
   user: SafeUser;
@@ -19,6 +19,7 @@ interface ListingInfoProps {
   guestCount: number;
   roomCount: number;
   bathroomCount: number;
+  // iframeurl: string;
   category:
     | {
         icon: IconType;
@@ -36,11 +37,12 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
   roomCount,
   bathroomCount,
   category,
+  // iframeurl,
   locationValue,
 }) => {
-  const { getByValue } = useCountries();
+  // const { getByValue } = useCountries();
 
-  const coordinates = getByValue(locationValue)?.latlng;
+  // const coordinates = getByValue(locationValue)?.latlng;
 
   return (
     <div className="col-span-4 flex flex-col gap-8">
@@ -82,6 +84,8 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         />
       )}
       <hr />
+      {locationValue}
+      <hr />
       <div
         className="
       text-lg font-light text-neutral-500"
@@ -89,7 +93,8 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         {description}
       </div>
       <hr />
-      <Map center={coordinates} />
+      {/* <Map center={coordinates} /> */}
+      {/* <Mapstatic iframeurl={iframeurl} /> */}
     </div>
   );
 };

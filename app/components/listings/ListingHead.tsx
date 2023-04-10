@@ -23,16 +23,9 @@ const ListingHead: React.FC<ListingHeadProps> = ({
   id,
   currentUser,
 }) => {
-  const { getByValue } = useCountries();
-
-  const location = getByValue(locationValue);
-
   return (
     <>
-      <Heading
-        title={title}
-        subtitle={`${location?.region}, ${location?.label}`}
-      />
+      <Heading title={title} subtitle={`${locationValue}`} />
       <div
         className="
           w-full
