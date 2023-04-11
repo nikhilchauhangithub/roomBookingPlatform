@@ -1,19 +1,13 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import { IconType } from 'react-icons';
 
-import useCountries from '@/app/hooks/useCountries';
 import { SafeUser } from '@/app/types';
-// import Mapstatic from '../Mapstatic';
+
 import Avatar from '../Avatar';
 import ListingCategory from './ListingCategory';
-import Mapstatic from '../Mapstatic';
-import Iframe from 'react-iframe';
 
-// const Map = dynamic(() => import('../Map'), {
-//   ssr: false,
-// });
+import Iframe from 'react-iframe';
 
 interface ListingInfoProps {
   user: SafeUser;
@@ -92,14 +86,6 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
       </div>
       <hr />
       <Iframe url={iframeurl} width="100%" height="450px" />
-
-      {/* <iframe
-        src={iframeurl}
-        title="iframe"
-        width="100%"
-        height="400"
-        frameBorder="0"
-      /> */}
     </div>
   );
 };
