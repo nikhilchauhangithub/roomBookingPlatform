@@ -1,13 +1,18 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { IconType } from 'react-icons';
 
+import useCountries from '@/app/hooks/useCountries';
 import { SafeUser } from '@/app/types';
-
+// import Mapstatic from '../Mapstatic';
 import Avatar from '../Avatar';
 import ListingCategory from './ListingCategory';
+import Mapstatic from '../Mapstatic';
 
-import Iframe from 'react-iframe';
+// const Map = dynamic(() => import('../Map'), {
+//   ssr: false,
+// });
 
 interface ListingInfoProps {
   user: SafeUser;
@@ -15,7 +20,7 @@ interface ListingInfoProps {
   guestCount: number;
   roomCount: number;
   bathroomCount: number;
-  iframeurl: string;
+  // iframeurl: string;
   category:
     | {
         icon: IconType;
@@ -33,9 +38,13 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
   roomCount,
   bathroomCount,
   category,
-  iframeurl,
+  // iframeurl,
   locationValue,
 }) => {
+  // const { getByValue } = useCountries();
+
+  // const coordinates = getByValue(locationValue)?.latlng;
+
   return (
     <div className="col-span-4 flex flex-col gap-8">
       <div className="flex flex-col gap-2">
@@ -85,7 +94,8 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         {description}
       </div>
       <hr />
-      <Iframe url={iframeurl} width="100%" height="450px" />
+      {/* <Map center={coordinates} /> */}
+      <Mapstatic />
     </div>
   );
 };

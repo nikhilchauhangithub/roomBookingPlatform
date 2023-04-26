@@ -12,7 +12,7 @@ import useRentModal from '@/app/hooks/useRentModal';
 import Modal from './Modal';
 import Counter from '../inputs/Counter';
 import CategoryInput from '../inputs/CategoryInput';
-
+import CountrySelect from '../inputs/CountrySelect';
 import { categories } from '../navbar/Categories';
 import ImageUpload from '../inputs/ImageUpload';
 import Input from '../inputs/Input';
@@ -48,7 +48,7 @@ const RentModal = () => {
       guestCount: 1,
       roomCount: 1,
       bathroomCount: 1,
-      iframeurl: '',
+      iframeurl: null,
       imageSrc: '',
       price: 1,
       title: '',
@@ -62,6 +62,14 @@ const RentModal = () => {
   const roomCount = watch('roomCount');
   const bathroomCount = watch('bathroomCount');
   const imageSrc = watch('imageSrc');
+
+  // const Map = useMemo(
+  //   () =>
+  //     dynamic(() => import('../Map'), {
+  //       ssr: false,
+  //     }),
+  //   [location]
+  // );
 
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
@@ -164,14 +172,23 @@ const RentModal = () => {
           errors={errors}
           required
         />
-        <Input
+        {/* <Input
           id="iframeurl"
           label="Map iframe url"
           disabled={isLoading}
           register={register}
           errors={errors}
           required
-        />
+        /> */}
+
+        {/* <Input
+          id="description"
+          label="Description"
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        /> */}
       </div>
     );
   }

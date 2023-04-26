@@ -85,7 +85,6 @@ export default async function getListings(params: IListingsParams) {
     const safeListings = listings.map((listing) => ({
       ...listing,
       createdAt: listing.createdAt.toISOString(),
-      iframeurl: listing.iframeurl ?? '',
     }));
 
     return safeListings;
