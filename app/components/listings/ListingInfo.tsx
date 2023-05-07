@@ -5,10 +5,11 @@ import { IconType } from 'react-icons';
 
 import useCountries from '@/app/hooks/useCountries';
 import { SafeUser } from '@/app/types';
-// import Mapstatic from '../Mapstatic';
+import Mapstatic from '../Mapstatic';
 import Avatar from '../Avatar';
 import ListingCategory from './ListingCategory';
-import Mapstatic from '../Mapstatic';
+
+import Iframe from 'react-iframe';
 
 // const Map = dynamic(() => import('../Map'), {
 //   ssr: false,
@@ -20,7 +21,7 @@ interface ListingInfoProps {
   guestCount: number;
   roomCount: number;
   bathroomCount: number;
-  // iframeurl: string;
+  iframeurl: string;
   category:
     | {
         icon: IconType;
@@ -38,7 +39,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
   roomCount,
   bathroomCount,
   category,
-  // iframeurl,
+  iframeurl,
   locationValue,
 }) => {
   // const { getByValue } = useCountries();
@@ -94,8 +95,8 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         {description}
       </div>
       <hr />
-      {/* <Map center={coordinates} /> */}
-      <Mapstatic />
+
+      <Iframe url={iframeurl} width="100%" height="450px" />
     </div>
   );
 };

@@ -48,7 +48,7 @@ const RentModal = () => {
       guestCount: 1,
       roomCount: 1,
       bathroomCount: 1,
-      iframeurl: null,
+      iframeurl: '',
       imageSrc: '',
       price: 1,
       title: '',
@@ -172,14 +172,14 @@ const RentModal = () => {
           errors={errors}
           required
         />
-        {/* <Input
+        <Input
           id="iframeurl"
           label="Map iframe url"
           disabled={isLoading}
           register={register}
           errors={errors}
           required
-        /> */}
+        />
 
         {/* <Input
           id="description"

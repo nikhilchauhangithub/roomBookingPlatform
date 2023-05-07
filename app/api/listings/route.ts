@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     bathroomCount,
     guestCount,
     locationValue,
-    // iframeurl,
+    iframeurl,
     price,
   } = body;
 
@@ -40,7 +40,7 @@ export async function POST(request: Request) {
       bathroomCount,
       guestCount,
       locationValue,
-      // iframeurl,
+      iframeurl,
       price: parseInt(price, 10),
       userId: currentUser.id,
     },
