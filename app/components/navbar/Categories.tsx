@@ -29,9 +29,9 @@ export const categories = [
     description: 'This property is a Hotel',
   },
   {
-    label: 'Rafting',
+    label: 'Full Day Healing',
     icon: RiSailboatLine,
-    description: 'This is a Rafting Service',
+    description: 'Full day healing',
   },
   {
     label: 'Trekking',
